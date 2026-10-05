@@ -1,5 +1,5 @@
 import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
+import { View, Text, Pressable, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
@@ -8,6 +8,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+
 
 function getDevMenuHint() {
   if (Platform.OS === 'web') {
@@ -35,9 +36,18 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            Wake Up App
           </ThemedText>
         </ThemedView>
+
+        <View>
+          <Text>Wake Up App</Text>
+
+          <Pressable onPress={() => console.log("Hello World!")}>
+            <Text>Test Button</Text>
+          </Pressable>
+
+        </View>
 
         <ThemedText type="code" style={styles.code}>
           get started
